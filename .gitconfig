@@ -7,7 +7,7 @@ ignore = !git update-index --assume-unchanged
 unignore = !git update-index --no-assume-unchanged
 ignored = !git ls-files -v | grep ^[a-z]
 gr = log --pretty=format:'%h - %p - %an, %ar : %s '
-s = status #status 
+st = status #status 
 #  choose       =====
 a       =       add #...
 aa      =       add .
@@ -25,3 +25,16 @@ cam     =       commit --amend -C HEAD # update last commit
 #  undo =====
 r       =       reset --hard HEAD
 rv      =       revert HEAD
+# push
+force=push -f
+pu = push 
+# diff
+wd=diff --color-words
+difs = diff --staged
+difh  =diff HEAD
+difr  =diff @{u}
+difl = diff --name-only
+
+# pull
+pl = pull
+co = checkout 
