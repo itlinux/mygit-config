@@ -1,0 +1,27 @@
+[alias]
+fa = fetch --all
+far = fetch --all --recurse-submodules
+t = log --graph --pretty=oneline --abbrev-commit --decorate --color
+ta = log --graph --pretty=oneline --abbrev-commit --decorate --color --all
+ignore = !git update-index --assume-unchanged
+unignore = !git update-index --no-assume-unchanged
+ignored = !git ls-files -v | grep ^[a-z]
+gr = log --pretty=format:'%h - %p - %an, %ar : %s '
+s = status #status 
+#  choose       =====
+a       =       add #...
+aa      =       add .
+ai      =       add -i
+#  unchoose     =====
+rm      =       rm -r #... unversion and delete
+rmc     =       rm -r --cached #... unversion, but leave in working copy
+#  do   =====
+c       =       commit -m #...
+fc      =       commit -am "fastcommit"
+ca      =       commit -am #...
+mc      =       commit # think 'message-commit'
+mca     =       commit -a
+cam     =       commit --amend -C HEAD # update last commit
+#  undo =====
+r       =       reset --hard HEAD
+rv      =       revert HEAD
